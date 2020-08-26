@@ -1,38 +1,39 @@
 {
-  "name": "electron-spread",
+  "name": "electron",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-node": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "electron-builder"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "asar": "^2.0.1",
-    "electron": "^6.0.2",
-    "electron-builder": "^20.44.4"
+  "dependencies": {
+    "timer.js": "^1.0.4"
   },
   "build": {
-    "productName": "electron-spread",
-    "appId": "electron-spread",
-    "copyright": "@grapecity",
-    "asar": true,
+    "productName": "appDemo",
+    "appId": "appDemoId",
     "directories": {
-      "output": "build"
+      "buildResources": "resources",
+      "output": "dist/"
     },
     "win": {
-      "target": [
-        "nsis",
-        "zip"
-      ]
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "allowElevation": true
+      "allowElevation": true,
+      "createDesktopShortcut": true
     }
+  },
+  "devDependencies": {
+    "electron-builder": "^22.8.0",
+    "electron": "^10.0.0"
+
   }
 }
